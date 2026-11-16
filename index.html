@@ -69,6 +69,19 @@
     padding:8px 11px;border-radius:999px;transition:color .15s ease, background .15s ease;white-space:nowrap;
   }
   .nav a:hover{color:var(--ink);background:rgba(0,0,0,.045)}
+  .header-right{display:flex;align-items:center;gap:10px}
+  .lang-switch{
+    display:inline-flex;align-items:center;gap:2px;flex:none;
+    padding:2px;border:1px solid var(--line-strong);border-radius:999px;background:#fff;
+  }
+  .lang-switch button{
+    border:0;background:transparent;font:inherit;cursor:pointer;
+    font-size:12.5px;font-weight:650;line-height:1;color:var(--muted);
+    padding:6px 10px;border-radius:999px;transition:background .15s ease,color .15s ease;
+  }
+  .lang-switch button:hover{color:var(--ink);background:rgba(0,0,0,.05)}
+  .lang-switch button.is-active{background:var(--green);color:#fff}
+  .lang-switch button.is-active:hover{background:var(--green)}
 
   /* ---------- hero ---------- */
   .hero{position:relative;overflow:hidden;padding:72px 0 40px}
@@ -298,9 +311,13 @@
   }
   @media (max-width:560px){
     .wrap{padding:0 18px}
-    .brand{font-size:14px;gap:8px}
-    .brand-mark{width:22px;height:22px}
-    .nav a{padding:8px 8px;font-size:13.5px}
+    .brand{font-size:13.5px;gap:7px}
+    .brand-mark{width:20px;height:20px}
+    .brand-year{display:none}
+    .nav{gap:0}
+    .nav a{padding:8px 5px;font-size:12.5px}
+    .header-right{gap:6px}
+    .lang-switch button{padding:6px 8px;font-size:12px}
     .section{padding:44px 0}
     .panel{padding:20px}
     .lightbox{padding:14px}
@@ -315,12 +332,18 @@
 
 <header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
-    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>ICCCI · 2026</a>
-    <nav class="nav" aria-label="页面导航">
-      <a href="#videos">直播回放</a>
-      <a href="#photos">照片集</a>
-      <a href="#info">赛事信息</a>
-    </nav>
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">ICCCI</span><span class="brand-year"> · 2026</span></a>
+    <div class="header-right">
+      <nav class="nav" aria-label="页面导航">
+        <a href="#videos" data-i18n="nav.videos">直播回放</a>
+        <a href="#photos" data-i18n="nav.photos">照片集</a>
+        <a href="#info" data-i18n="nav.info">赛事信息</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="语言 / Language">
+        <button type="button" data-lang="zh" class="is-active">中文</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -328,15 +351,15 @@
   <section class="hero" id="top">
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>赛事回顾 · 2026</p>
-        <h1><span class="h1-top">2026 ICCCI 杯</span>印城华人<span class="accent">匹克球</span>公开赛</h1>
-        <p class="lead">2026 年 11 月 14–15 日 · Carmel, IN · The Dink House</p>
-        <p class="desc">两天比赛的直播回放、单场淘汰赛录像和照片集，都集中在这一页。点开就能看。</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">赛事回顾 · 2026</span></p>
+        <h1><span class="h1-top" data-i18n="hero.kicker">2026 ICCCI 杯</span><span data-i18n="hero.titlePre">印城华人</span><span class="accent" data-i18n="hero.titleAccent">匹克球</span><span data-i18n="hero.titlePost">公开赛</span></h1>
+        <p class="lead" data-i18n="hero.lead">2026 年 11 月 14–15 日 · Carmel, IN · The Dink House</p>
+        <p class="desc" data-i18n="hero.desc">两天比赛的直播回放、单场淘汰赛录像和照片集，都集中在这一页。点开就能看。</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#videos">看直播回放</a>
-          <a class="btn btn-ghost" href="#photos">看照片集</a>
+          <a class="btn btn-primary" href="#videos" data-i18n="hero.btnVideos">看直播回放</a>
+          <a class="btn btn-ghost" href="#photos" data-i18n="hero.btnPhotos">看照片集</a>
         </div>
-        <ul class="stats" id="stats" aria-label="比赛数据概览"></ul>
+        <ul class="stats" id="stats" data-i18n-aria="stats.aria" aria-label="比赛数据概览"></ul>
         <figure class="poster-inline">
           <a href="poster.jpg" target="_blank" rel="noopener" aria-label="查看赛事海报大图">
             <img src="poster.jpg" alt="2026 ICCCI 杯印城华人匹克球公开赛海报">
@@ -356,15 +379,15 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <h2>直播回放</h2>
-          <p>两天比赛的完整直播，点开就在本页播放；需要原链接时可以点开 YouTube。</p>
+          <h2 data-i18n="videos.title">直播回放</h2>
+          <p data-i18n="videos.desc">两天比赛的完整直播，点开就在本页播放；需要原链接时可以点开 YouTube。</p>
         </div>
       </div>
       <div class="grid videos" id="videoGrid"></div>
 
       <div class="subhead reveal" id="matchHead">
-        <h3>单场比赛录像及集锦 <span class="pill">Day 2 淘汰赛 · Day 1 决赛</span></h3>
-        <p>Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双、女双决赛，最后一段是男双决赛集锦。</p>
+        <h3><span data-i18n="match.title">单场比赛录像及集锦</span> <span class="pill" data-i18n="match.pill">Day 2 淘汰赛 · Day 1 决赛</span></h3>
+        <p data-i18n="match.desc">Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双、女双决赛，最后一段是男双决赛集锦。</p>
       </div>
       <div class="grid videos" id="matchGrid"></div>
     </div>
@@ -374,8 +397,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <h2>照片集</h2>
-          <p>摄影师分享的相册，点击即可打开原相册（Google Photos / Google Drive）。</p>
+          <h2 data-i18n="photos.title">照片集</h2>
+          <p data-i18n="photos.desc">摄影师分享的相册，点击即可打开原相册（Google Photos / Google Drive）。</p>
         </div>
       </div>
       <div class="grid albums" id="albumGrid"></div>
@@ -386,15 +409,19 @@
     <div class="wrap">
       <div class="info-grid solo" id="infoGrid">
         <div class="panel reveal">
-          <h2>赛事信息</h2>
+          <h2 data-i18n="info.title">赛事信息</h2>
           <dl class="facts" id="facts"></dl>
-          <a class="btn btn-primary" id="eventLink" href="#" target="_blank" rel="noopener">查看报名与赛程页</a>
-          <p class="note">页面内容由参赛球友整理，视频与照片版权归原作者所有。</p>
+          <a class="btn btn-primary" id="eventLink" href="#" target="_blank" rel="noopener" data-i18n="info.link">查看报名与赛程页</a>
+          <p class="note" data-i18n="info.note">页面内容由参赛球友整理，视频与照片版权归原作者所有。</p>
         </div>
         <div class="panel reveal" id="resultsPanel" hidden>
-          <h2>冠亚军</h2>
+          <h2 data-i18n="results.title">冠亚军</h2>
           <table class="results-table">
-            <thead><tr><th>项目</th><th>冠军</th><th>亚军</th></tr></thead>
+            <thead><tr>
+              <th data-i18n="results.event">项目</th>
+              <th data-i18n="results.champion">冠军</th>
+              <th data-i18n="results.runner">亚军</th>
+            </tr></thead>
             <tbody id="resultsBody"></tbody>
           </table>
         </div>
@@ -405,8 +432,8 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <span>2026 ICCCI 杯印城华人匹克球公开赛 · 比赛资料汇总</span>
-    <span><a href="#top">回到顶部 ↑</a></span>
+    <span data-i18n="footer.left">2026 ICCCI 杯印城华人匹克球公开赛 · 比赛资料汇总</span>
+    <span><a href="#top" data-i18n="footer.top">回到顶部 ↑</a></span>
   </div>
 </footer>
 
@@ -414,7 +441,7 @@
   <div class="lightbox-inner">
     <button class="close" id="lightboxClose" aria-label="关闭">×</button>
     <div class="frame"><iframe id="player" title="视频播放器" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-    <div class="lightbox-bar"><span id="playerTitle"></span><a id="playerLink" href="#" target="_blank" rel="noopener">在 YouTube 打开 ↗</a></div>
+    <div class="lightbox-bar"><span id="playerTitle"></span><a id="playerLink" href="#" target="_blank" rel="noopener" data-i18n="lightbox.open">在 YouTube 打开 ↗</a></div>
   </div>
 </div>
 
@@ -423,78 +450,183 @@
    维护说明：只需要改下面这一段。
    - 加视频：在 videos 里加一项，youtubeId 就是 youtu.be/ 后面那 11 位字符。
    - 加相册：在 albums 里加一项，link 填分享链接，day 写 Day 1 / Day 2 / 全部。
+   - 中英文：带 En 后缀的字段（titleEn / metaEn / sourceEn）是英文版文案，
+     不填就会退回显示中文；中英文界面的固定文案在下面的 I18N 里。
    - 冠亚军：results 留空 [] 就不显示该区块；有名单时按格式填即可。
    ========================================================================= */
 const CONFIG = {
   event: {
-    name: "2026 ICCCI 杯印城华人匹克球公开赛",
-    dates: "2026 年 11 月 14–15 日",
-    venue: "The Dink House · Carmel, IN",
-    eventPage: "https://pickleball.community/event/97",
-    organiser: "ICCCI（印州华人社区）"
+    name:      { zh: "2026 ICCCI 杯印城华人匹克球公开赛", en: "2026 ICCCI Cup · Indianapolis Chinese Pickleball Open" },
+    dates:     { zh: "2026 年 11 月 14–15 日",             en: "November 14–15, 2026" },
+    venue:     { zh: "The Dink House · Carmel, IN",         en: "The Dink House · Carmel, IN" },
+    organiser: { zh: "ICCCI（印州华人社区）",               en: "ICCCI (Indianapolis Chinese Community Center)" },
+    eventPage: "https://pickleball.community/event/97"
   },
   videos: [
-    { group: "live",  youtubeId: "19vC3scbmbw", title: "Day 1 决赛直播回放",       day: "Day 1", meta: "完整直播 · 决赛日" },
-    { group: "live",  youtubeId: "NSyC53KstVM", title: "Day 2 直播回放（16 强起）", day: "Day 2", meta: "完整直播 · 淘汰赛阶段" },
+    { group: "live",  youtubeId: "19vC3scbmbw", day: "Day 1",
+      title: "Day 1 决赛直播回放", titleEn: "Day 1 Finals – Full Live Replay",
+      meta: "完整直播 · 决赛日", metaEn: "Full stream · Finals day" },
+    { group: "live",  youtubeId: "NSyC53KstVM", day: "Day 2",
+      title: "Day 2 直播回放（16 强起）", titleEn: "Day 2 Live Replay (from Round of 16)",
+      meta: "完整直播 · 淘汰赛阶段", metaEn: "Full stream · Knockout stage" },
 
-    { group: "match", youtubeId: "MRs7JMrv0Zc", title: "决赛 · Kevin / Becca vs 志伟 / Tammie",          day: "Day 2", meta: "Day 2 决赛 · 17:44" },
-    { group: "match", youtubeId: "4HSFNlyyQeU", title: "半决赛 · Kevin / Becca vs Tingjun / Joshua",     day: "Day 2", meta: "Day 2 半决赛 · 11:56" },
-    { group: "match", youtubeId: "EY3O-n6Rixk", title: "铜牌赛 · Tingjun / Joshua vs Jeff / Jordyn",     day: "Day 2", meta: "Day 2 铜牌赛 · 19:39" },
-    { group: "match", youtubeId: "_8IfgNKXkLU", title: "八强 · Kevin / Becca vs 骆华 / Anne",            day: "Day 2", meta: "Day 2 1/4 决赛 · 7:39" },
-    { group: "match", youtubeId: "QM6m-JaJ1S4", title: "十六强 · 大姚 / 玉萍 vs Andy / Nancy",           day: "Day 2", meta: "Day 2 1/16 决赛 · 18:47" },
-    { group: "match", youtubeId: "1PUA50Qjhgs", title: "男双决赛 · Kevin / 骆华 vs 志伟 / Tim",           day: "Day 1", meta: "Day 1 男双决赛 · 29:19" },
-    { group: "match", youtubeId: "FOHShIx4HJw", title: "女双决赛 · Tingjun / Elmira vs Nancy / 潘菲",     day: "Day 1", meta: "Day 1 女双决赛 · 15:07" },
-    { group: "match", youtubeId: "4MoYgSyUQUE", title: "男双决赛集锦",                                    day: "Day 1", meta: "Day 1 精彩集锦 · 男双决赛" }
+    { group: "match", youtubeId: "MRs7JMrv0Zc", day: "Day 2",
+      title: "决赛 · Kevin / Becca vs 志伟 / Tammie", titleEn: "Final · Kevin / Becca vs 志伟 / Tammie",
+      meta: "Day 2 决赛 · 17:44", metaEn: "Day 2 Final · 17:44" },
+    { group: "match", youtubeId: "4HSFNlyyQeU", day: "Day 2",
+      title: "半决赛 · Kevin / Becca vs Tingjun / Joshua", titleEn: "Semi-final · Kevin / Becca vs Tingjun / Joshua",
+      meta: "Day 2 半决赛 · 11:56", metaEn: "Day 2 Semi-final · 11:56" },
+    { group: "match", youtubeId: "EY3O-n6Rixk", day: "Day 2",
+      title: "铜牌赛 · Tingjun / Joshua vs Jeff / Jordyn", titleEn: "Bronze medal · Tingjun / Joshua vs Jeff / Jordyn",
+      meta: "Day 2 铜牌赛 · 19:39", metaEn: "Day 2 Bronze · 19:39" },
+    { group: "match", youtubeId: "_8IfgNKXkLU", day: "Day 2",
+      title: "八强 · Kevin / Becca vs 骆华 / Anne", titleEn: "Quarter-final · Kevin / Becca vs 骆华 / Anne",
+      meta: "Day 2 1/4 决赛 · 7:39", metaEn: "Day 2 Quarter-final · 7:39" },
+    { group: "match", youtubeId: "QM6m-JaJ1S4", day: "Day 2",
+      title: "十六强 · 大姚 / 玉萍 vs Andy / Nancy", titleEn: "Round of 16 · 大姚 / 玉萍 vs Andy / Nancy",
+      meta: "Day 2 1/16 决赛 · 18:47", metaEn: "Day 2 Round of 16 · 18:47" },
+    { group: "match", youtubeId: "1PUA50Qjhgs", day: "Day 1",
+      title: "男双决赛 · Kevin / 骆华 vs 志伟 / Tim", titleEn: "Men's doubles final · Kevin / 骆华 vs 志伟 / Tim",
+      meta: "Day 1 男双决赛 · 29:19", metaEn: "Day 1 Men's doubles final · 29:19" },
+    { group: "match", youtubeId: "FOHShIx4HJw", day: "Day 1",
+      title: "女双决赛 · Tingjun / Elmira vs Nancy / 潘菲", titleEn: "Women's doubles final · Tingjun / Elmira vs Nancy / 潘菲",
+      meta: "Day 1 女双决赛 · 15:07", metaEn: "Day 1 Women's doubles final · 15:07" },
+    { group: "match", youtubeId: "4MoYgSyUQUE", day: "Day 1",
+      title: "男双决赛集锦", titleEn: "Men's doubles final highlights",
+      meta: "Day 1 精彩集锦 · 男双决赛", metaEn: "Day 1 Highlights · Men's doubles final" }
   ],
   albums: [
-    { title: "Day 1 照片集",  day: "Day 1", by: "Charles Lin", link: "https://photos.app.goo.gl/eV2nLNymzutxLqDV9", source: "Google Photos", tone: "a" },
-    { title: "Day 2 照片集",  day: "Day 2", by: "Charles Lin", link: "https://photos.app.goo.gl/rMkAff9wVkxqSeZdA", source: "Google Photos", tone: "b" },
-    { title: "比赛照片集",    day: "全部",  by: "解丽",         link: "https://drive.google.com/drive/folders/1k2UyWPXrCDwje2stF1keQK7LBxSaD0Id?usp=sharing", source: "Drive 文件夹", tone: "c" },
-    { title: "比赛照片集",    day: "全部",  by: "Yong, WD",     link: "https://drive.google.com/drive/folders/1pqlvtqfQKY0xaRX4ycE4QuKKsOGMwA6q", source: "Drive 文件夹", tone: "d" }
+    { title: "Day 1 照片集", titleEn: "Day 1 Photos", day: "Day 1", by: "Charles Lin",
+      link: "https://photos.app.goo.gl/eV2nLNymzutxLqDV9", source: "Google Photos", sourceEn: "Google Photos", tone: "a" },
+    { title: "Day 2 照片集", titleEn: "Day 2 Photos", day: "Day 2", by: "Charles Lin",
+      link: "https://photos.app.goo.gl/rMkAff9wVkxqSeZdA", source: "Google Photos", sourceEn: "Google Photos", tone: "b" },
+    { title: "比赛照片集", titleEn: "Match Photos", day: "全部", by: "解丽",
+      link: "https://drive.google.com/drive/folders/1k2UyWPXrCDwje2stF1keQK7LBxSaD0Id?usp=sharing", source: "Drive 文件夹", sourceEn: "Drive folder", tone: "c" },
+    { title: "比赛照片集", titleEn: "Match Photos", day: "全部", by: "Yong, WD",
+      link: "https://drive.google.com/drive/folders/1pqlvtqfQKY0xaRX4ycE4QuKKsOGMwA6q", source: "Drive 文件夹", sourceEn: "Drive folder", tone: "d" }
   ],
   results: []
 };
 
-document.documentElement.classList.add('js');
+/* ---------------- 界面文案（中 / 英） ---------------- */
+const I18N = {
+  zh: {
+    'page.title': '2026 ICCCI 杯印城华人匹克球公开赛 · 直播回放与照片',
+    'page.desc': '2026 ICCCI 杯印城华人匹克球公开赛（11 月 14–15 日，Carmel, IN）直播回放、单场比赛录像与照片集汇总。',
+    'nav.videos': '直播回放', 'nav.photos': '照片集', 'nav.info': '赛事信息',
+    'hero.eyebrow': '赛事回顾 · 2026', 'hero.kicker': '2026 ICCCI 杯',
+    'hero.titlePre': '印城华人', 'hero.titleAccent': '匹克球', 'hero.titlePost': '公开赛',
+    'hero.lead': '2026 年 11 月 14–15 日 · Carmel, IN · The Dink House',
+    'hero.desc': '两天比赛的直播回放、单场淘汰赛录像和照片集，都集中在这一页。点开就能看。',
+    'hero.btnVideos': '看直播回放', 'hero.btnPhotos': '看照片集',
+    'stats.aria': '比赛数据概览',
+    'stats.days': '比赛日', 'stats.videos': '视频', 'stats.albums': '照片集', 'stats.shooters': '摄影师',
+    'videos.title': '直播回放',
+    'videos.desc': '两天比赛的完整直播，点开就在本页播放；需要原链接时可以点开 YouTube。',
+    'match.title': '单场比赛录像及集锦', 'match.pill': 'Day 2 淘汰赛 · Day 1 决赛',
+    'match.desc': 'Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双、女双决赛，最后一段是男双决赛集锦。',
+    'photos.title': '照片集',
+    'photos.desc': '摄影师分享的相册，点击即可打开原相册（Google Photos / Google Drive）。',
+    'album.by': '摄影 ·', 'album.meta': '{by} 拍摄 · {source}', 'album.open': '打开相册 ↗',
+    'video.open': '在 YouTube 打开 ↗', 'video.playAria': '播放视频：',
+    'info.title': '赛事信息',
+    'info.factEvent': '赛事', 'info.factDates': '时间', 'info.factVenue': '地点', 'info.factOrg': '主办',
+    'info.link': '查看报名与赛程页',
+    'info.note': '页面内容由参赛球友整理，视频与照片版权归原作者所有。',
+    'results.title': '冠亚军', 'results.event': '项目', 'results.champion': '冠军', 'results.runner': '亚军',
+    'results.tbd': '待补充',
+    'footer.left': '2026 ICCCI 杯印城华人匹克球公开赛 · 比赛资料汇总', 'footer.top': '回到顶部 ↑',
+    'lightbox.open': '在 YouTube 打开 ↗'
+  },
+  en: {
+    'page.title': '2026 ICCCI Cup · Indianapolis Chinese Pickleball Open — Replays & Photos',
+    'page.desc': 'Live replay, match videos and photo albums from the 2026 ICCCI Cup (Nov 14–15, Carmel, IN).',
+    'nav.videos': 'Live replay', 'nav.photos': 'Photos', 'nav.info': 'Event info',
+    'hero.eyebrow': 'Event recap · 2026', 'hero.kicker': '2026 ICCCI Cup',
+    'hero.titlePre': 'Indianapolis Chinese ', 'hero.titleAccent': 'Pickleball', 'hero.titlePost': ' Open',
+    'hero.lead': 'November 14–15, 2026 · Carmel, IN · The Dink House',
+    'hero.desc': 'Live replays, single-match videos and photo albums from the two-day tournament — all on this page.',
+    'hero.btnVideos': 'Watch replays', 'hero.btnPhotos': 'Browse photos',
+    'stats.aria': 'Event at a glance',
+    'stats.days': 'Days', 'stats.videos': 'Videos', 'stats.albums': 'Albums', 'stats.shooters': 'Photographers',
+    'videos.title': 'Live replay',
+    'videos.desc': 'Full live streams from both days — play right here, or open them on YouTube.',
+    'match.title': 'Match videos & highlights', 'match.pill': 'Day 2 knockout · Day 1 finals',
+    'match.desc': 'Day 2 runs from the final down to the Round of 16, followed by the Day 1 men’s and women’s doubles finals and the men’s doubles highlights.',
+    'photos.title': 'Photos',
+    'photos.desc': 'Albums shared by the photographers — click to open the original album (Google Photos / Google Drive).',
+    'album.by': 'Photos by', 'album.meta': 'Shot by {by} · {source}', 'album.open': 'Open album ↗',
+    'video.open': 'Open on YouTube ↗', 'video.playAria': 'Play video: ',
+    'info.title': 'Event info',
+    'info.factEvent': 'Event', 'info.factDates': 'Dates', 'info.factVenue': 'Venue', 'info.factOrg': 'Organised by',
+    'info.link': 'Registration & bracket page',
+    'info.note': 'Compiled by players for the community. Videos and photos belong to their original creators.',
+    'results.title': 'Medalists', 'results.event': 'Event', 'results.champion': 'Champion', 'results.runner': 'Runner-up',
+    'results.tbd': 'TBD',
+    'footer.left': '2026 ICCCI Cup · Indianapolis Chinese Pickleball Open — media round-up', 'footer.top': 'Back to top ↑',
+    'lightbox.open': 'Open on YouTube ↗'
+  }
+};
+
+const LANG_KEY = 'iccci-lang';
+let lang = 'zh';
+
 const $ = (s, r = document) => r.querySelector(s);
+const t = k => (I18N[lang] && I18N[lang][k]) || I18N.zh[k] || k;
+const pick = v => (v && typeof v === 'object') ? (v[lang] || v.zh || '') : (v || '');
+
+/* ---------------- 静态文案 ---------------- */
+function applyStatic() {
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = t('page.title');
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+  document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('is-active', b.dataset.lang === lang));
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.setAttribute('content', t('page.desc'));
+}
 
 /* ---------------- 统计条 ---------------- */
-(function renderStats() {
+function renderStats() {
   const shooters = new Set(CONFIG.albums.map(a => a.by)).size;
   const items = [
-    { num: "2", lab: "比赛日" },
-    { num: CONFIG.videos.length, lab: "视频" },
-    { num: CONFIG.albums.length, lab: "照片集" },
-    { num: shooters, lab: "摄影师" }
+    { num: '2', lab: t('stats.days') },
+    { num: CONFIG.videos.length, lab: t('stats.videos') },
+    { num: CONFIG.albums.length, lab: t('stats.albums') },
+    { num: shooters, lab: t('stats.shooters') }
   ];
   $('#stats').innerHTML = items.map(i =>
     `<li><span class="num">${i.num}</span><span class="lab">${i.lab}</span></li>`
   ).join('');
-})();
+}
 
 /* ---------------- 视频卡片 ---------------- */
-(function renderVideos() {
-  const card = (v, i) => `
+function renderVideos() {
+  const card = (v, i) => {
+    const title = (lang === 'en' && v.titleEn) ? v.titleEn : v.title;
+    const meta = (lang === 'en' && v.metaEn) ? v.metaEn : v.meta;
+    return `
     <article class="card reveal" style="transition-delay:${i * 50}ms">
-      <button class="thumb" data-id="${v.youtubeId}" data-title="${v.title}" aria-label="播放视频：${v.title}">
+      <button class="thumb" data-id="${v.youtubeId}" data-title="${title}" aria-label="${t('video.playAria')}${title}">
         <span class="badge">${v.day}</span>
         <img src="https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg" alt="" loading="lazy"
              onerror="this.closest('.thumb').classList.add('no-thumb')">
         <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
       </button>
       <div class="card-body">
-        <h3>${v.title}</h3>
-        <p class="meta">${v.meta}</p>
-        <a class="mini-link" href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" rel="noopener">在 YouTube 打开 ↗</a>
+        <h3>${title}</h3>
+        <p class="meta">${meta}</p>
+        <a class="mini-link" href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" rel="noopener">${t('video.open')}</a>
       </div>
     </article>`;
+  };
 
   const live = CONFIG.videos.filter(v => v.group !== 'match');
   const matches = CONFIG.videos.filter(v => v.group === 'match');
   $('#videoGrid').innerHTML = live.map(card).join('');
   $('#matchGrid').innerHTML = matches.map(card).join('');
-  if (!matches.length) $('#matchHead').hidden = true;
-})();
+  $('#matchHead').hidden = !matches.length;
+}
 
 /* ---------------- 相册卡片 ---------------- */
 const court = `<svg class="court" viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true">
@@ -504,42 +636,101 @@ const court = `<svg class="court" viewBox="0 0 160 100" preserveAspectRatio="non
   <line x1="6" y1="22" x2="154" y2="22"/><line x1="6" y1="78" x2="154" y2="78"/>
 </svg>`;
 
-(function renderAlbums() {
-  $('#albumGrid').innerHTML = CONFIG.albums.map((a, i) => `
+function renderAlbums() {
+  $('#albumGrid').innerHTML = CONFIG.albums.map((a, i) => {
+    const title = (lang === 'en' && a.titleEn) ? a.titleEn : a.title;
+    const day = lang === 'en' ? (a.day === '全部' ? 'All' : a.day) : a.day;
+    const source = (lang === 'en' && a.sourceEn) ? a.sourceEn : a.source;
+    const meta = t('album.meta').replace('{by}', a.by).replace('{source}', source);
+    return `
     <a class="album reveal" href="${a.link}" target="_blank" rel="noopener" style="transition-delay:${i * 60}ms">
       <div class="album-cover tone-${a.tone}">
         ${court}
-        <span class="cover-day">${a.day}</span>
-        <span class="cover-sub">摄影 · ${a.by}</span>
-        <span class="count">${a.source}</span>
+        <span class="cover-day">${day}</span>
+        <span class="cover-sub">${t('album.by')} ${a.by}</span>
+        <span class="count">${source}</span>
       </div>
       <div class="album-body">
-        <h3>${a.title}</h3>
-        <p>${a.by} 拍摄 · ${a.source}</p>
-        <span class="go">打开相册 ↗</span>
+        <h3>${title}</h3>
+        <p>${meta}</p>
+        <span class="go">${t('album.open')}</span>
       </div>
-    </a>
-  `).join('');
-})();
+    </a>`;
+  }).join('');
+}
 
 /* ---------------- 赛事信息 ---------------- */
-(function renderFacts() {
+function renderFacts() {
   const e = CONFIG.event;
-  const rows = [["赛事", e.name], ["时间", e.dates], ["地点", e.venue], ["主办", e.organiser]];
+  const rows = [
+    [t('info.factEvent'), pick(e.name)],
+    [t('info.factDates'), pick(e.dates)],
+    [t('info.factVenue'), pick(e.venue)],
+    [t('info.factOrg'), pick(e.organiser)]
+  ];
   $('#facts').innerHTML = rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
   $('#eventLink').href = e.eventPage;
-})();
+}
 
 /* ---------------- 冠亚军（可选） ---------------- */
-(function renderResults() {
-  if (!CONFIG.results.length) return;
-  $('#resultsPanel').hidden = false;
+function renderResults() {
+  const panel = $('#resultsPanel');
+  if (!CONFIG.results.length) { panel.hidden = true; $('#infoGrid').classList.add('solo'); return; }
+  panel.hidden = false;
   $('#infoGrid').classList.remove('solo');
   $('#resultsBody').innerHTML = CONFIG.results.map(r => `
-    <tr><td>${r.event}</td>
-        <td>${r.champion || '<span class="tbd">待补充</span>'}</td>
-        <td>${r.runnerUp || '<span class="tbd">待补充</span>'}</td></tr>
+    <tr><td>${pick(r.event)}</td>
+        <td>${pick(r.champion) || `<span class="tbd">${t('results.tbd')}</span>`}</td>
+        <td>${pick(r.runnerUp) || `<span class="tbd">${t('results.tbd')}</span>`}</td></tr>
   `).join('');
+}
+
+/* ---------------- 滚动显现 ---------------- */
+function observeReveals() {
+  const items = document.querySelectorAll('.reveal:not(.in)');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  items.forEach(el => io.observe(el));
+}
+
+/* ---------------- 渲染全部 ---------------- */
+function renderAll(animate) {
+  applyStatic();
+  renderStats();
+  renderVideos();
+  renderAlbums();
+  renderFacts();
+  renderResults();
+  if (animate) observeReveals();
+  else document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}
+
+/* ---------------- 启动 ---------------- */
+(function init() {
+  document.documentElement.classList.add('js');
+  let saved = null;
+  try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
+  let qLang = null;
+  try { qLang = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  lang = (qLang === 'en' || qLang === 'zh') ? qLang : (saved === 'en' ? 'en' : 'zh');
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.lang === lang) return;
+      lang = btn.dataset.lang;
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+      renderAll(false);
+    });
+  });
+
+  renderAll(true);
 })();
 
 /* ---------------- 播放器 ---------------- */
@@ -569,24 +760,12 @@ const court = `<svg class="court" viewBox="0 0 160 100" preserveAspectRatio="non
   document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !box.hidden) close(); });
 })();
 
-/* ---------------- 页头阴影 + 滚动显现 ---------------- */
+/* ---------------- 页头阴影 ---------------- */
 (function chrome() {
   const header = $('#siteHeader');
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
-
-  const items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    items.forEach(el => el.classList.add('in'));
-    return;
-  }
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-  items.forEach(el => io.observe(el));
 })();
 </script>
 </body>
