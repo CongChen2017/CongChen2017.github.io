@@ -133,6 +133,17 @@
   /* ---------- video cards ---------- */
   .grid{display:grid;gap:20px}
   .grid.videos{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+  .subhead{margin:54px 0 18px}
+  .subhead h3{
+    margin:0;font-size:18px;font-weight:680;letter-spacing:-.01em;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  }
+  .subhead .pill{
+    font-size:12px;font-weight:650;letter-spacing:.02em;
+    color:var(--green-deep);background:var(--green-soft);
+    padding:3px 10px;border-radius:999px;
+  }
+  .subhead p{margin:6px 0 0;color:var(--muted);font-size:14px}
   .card{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
     overflow:hidden;box-shadow:var(--shadow-sm);
@@ -305,7 +316,7 @@
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>2026 ICCCI Cup</p>
         <h1>印州华人<span class="accent">金虎杯</span><br>匹克球公开赛</h1>
         <p class="lead">2026 年 11 月 14–15 日 · Carmel, IN · The Dink House</p>
-        <p class="desc">两天比赛的直播回放、决赛集锦和照片集，都集中在这一页。点开就能看。</p>
+        <p class="desc">两天比赛的直播回放、单场淘汰赛录像和照片集，都集中在这一页。点开就能看。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#videos">看视频回放</a>
           <a class="btn btn-ghost" href="#photos">看照片集</a>
@@ -328,6 +339,12 @@
         </div>
       </div>
       <div class="grid videos" id="videoGrid"></div>
+
+      <div class="subhead reveal" id="matchHead">
+        <h3>单场比赛录像 <span class="pill">Day 2 淘汰赛</span></h3>
+        <p>按轮次从决赛开始排列，每段就是一场完整比赛。</p>
+      </div>
+      <div class="grid videos" id="matchGrid"></div>
     </div>
   </section>
 
@@ -395,9 +412,15 @@ const CONFIG = {
     organiser: "ICCCI（印州华人社区）"
   },
   videos: [
-    { youtubeId: "19vC3scbmbw", title: "Day 1 决赛直播回放",      day: "Day 1", meta: "完整直播 · 决赛日" },
-    { youtubeId: "NSyC53KstVM", title: "Day 2 直播回放（16 强起）", day: "Day 2", meta: "完整直播 · 淘汰赛阶段" },
-    { youtubeId: "4MoYgSyUQUE", title: "Day 1 男双决赛集锦",      day: "Day 1", meta: "精彩集锦 · 男双决赛" }
+    { group: "live",  youtubeId: "19vC3scbmbw", title: "Day 1 决赛直播回放",       day: "Day 1", meta: "完整直播 · 决赛日" },
+    { group: "live",  youtubeId: "NSyC53KstVM", title: "Day 2 直播回放（16 强起）", day: "Day 2", meta: "完整直播 · 淘汰赛阶段" },
+    { group: "live",  youtubeId: "4MoYgSyUQUE", title: "Day 1 男双决赛集锦",       day: "Day 1", meta: "精彩集锦 · 男双决赛" },
+
+    { group: "match", youtubeId: "MRs7JMrv0Zc", title: "决赛 · Kevin / Becca vs 志伟 / Tammie",          day: "Day 2", meta: "Day 2 决赛 · 17:44" },
+    { group: "match", youtubeId: "4HSFNlyyQeU", title: "半决赛 · Kevin / Becca vs Tingjun / Joshua",     day: "Day 2", meta: "Day 2 半决赛 · 11:56" },
+    { group: "match", youtubeId: "EY3O-n6Rixk", title: "铜牌赛 · Tingjun / Joshua vs Jeff / Jordyn",     day: "Day 2", meta: "Day 2 铜牌赛 · 19:39" },
+    { group: "match", youtubeId: "_8IfgNKXkLU", title: "八强 · Kevin / Becca vs 骆华 / Anne",            day: "Day 2", meta: "Day 2 1/4 决赛 · 7:39" },
+    { group: "match", youtubeId: "QM6m-JaJ1S4", title: "十六强 · 大姚 / 玉萍 vs Andy / Nancy",           day: "Day 2", meta: "Day 2 1/16 决赛 · 18:47" }
   ],
   albums: [
     { title: "Day 1 照片集",  day: "Day 1", by: "Charles Lin", link: "https://photos.app.goo.gl/eV2nLNymzutxLqDV9", source: "Google Photos", tone: "a" },
@@ -416,7 +439,7 @@ const $ = (s, r = document) => r.querySelector(s);
   const shooters = new Set(CONFIG.albums.map(a => a.by)).size;
   const items = [
     { num: "2", lab: "比赛日" },
-    { num: CONFIG.videos.length, lab: "视频回放" },
+    { num: CONFIG.videos.length, lab: "视频" },
     { num: CONFIG.albums.length, lab: "照片集" },
     { num: shooters, lab: "摄影师" }
   ];
@@ -427,8 +450,8 @@ const $ = (s, r = document) => r.querySelector(s);
 
 /* ---------------- 视频卡片 ---------------- */
 (function renderVideos() {
-  $('#videoGrid').innerHTML = CONFIG.videos.map((v, i) => `
-    <article class="card reveal" style="transition-delay:${i * 60}ms">
+  const card = (v, i) => `
+    <article class="card reveal" style="transition-delay:${i * 50}ms">
       <button class="thumb" data-id="${v.youtubeId}" data-title="${v.title}" aria-label="播放视频：${v.title}">
         <span class="badge">${v.day}</span>
         <img src="https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg" alt="" loading="lazy"
@@ -440,8 +463,13 @@ const $ = (s, r = document) => r.querySelector(s);
         <p class="meta">${v.meta}</p>
         <a class="mini-link" href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" rel="noopener">在 YouTube 打开 ↗</a>
       </div>
-    </article>
-  `).join('');
+    </article>`;
+
+  const live = CONFIG.videos.filter(v => v.group !== 'match');
+  const matches = CONFIG.videos.filter(v => v.group === 'match');
+  $('#videoGrid').innerHTML = live.map(card).join('');
+  $('#matchGrid').innerHTML = matches.map(card).join('');
+  if (!matches.length) $('#matchHead').hidden = true;
 })();
 
 /* ---------------- 相册卡片 ---------------- */
