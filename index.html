@@ -1,483 +1,539 @@
-<!Doctype html>
-
-<html lang="en-us">
-
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title> Cong's practice Page </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 ICCCI 杯印州华人金虎匹克球公开赛 · 视频与照片</title>
+<meta name="description" content="2026 ICCCI 杯印州华人金虎匹克球公开赛（11 月 14–15 日，Carmel, IN）比赛视频回放、决赛集锦与照片集汇总。">
+<meta name="theme-color" content="#fbfbf8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="2026 ICCCI 杯印州华人金虎匹克球公开赛 · 视频与照片">
+<meta property="og:description" content="两天比赛的直播回放、决赛集锦和照片集，都汇总在这一页。">
+<meta property="og:image" content="https://i.ytimg.com/vi/19vC3scbmbw/maxresdefault.jpg">
+<style>
+  :root{
+    --bg:#fbfbf8;
+    --surface:#ffffff;
+    --ink:#14181b;
+    --muted:#5c6a70;
+    --line:#e5e7e2;
+    --line-strong:#d6d9d2;
+    --green:#1b6b47;
+    --green-deep:#11452f;
+    --green-soft:#e9f4ee;
+    --lime:#d9f24f;
+    --radius:18px;
+    --shadow-sm:0 1px 2px rgba(16,24,20,.05), 0 6px 18px rgba(16,24,20,.04);
+    --shadow-lg:0 18px 50px rgba(16,24,20,.14);
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    overflow-x:hidden;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-  <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  /* ---------- header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    background:rgba(251,251,248,.82);
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .site-header.is-scrolled{border-bottom-color:var(--line);background:rgba(251,251,248,.94)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:.01em;text-decoration:none;font-size:15px;white-space:nowrap}
+  .brand-mark{
+    width:26px;height:26px;border-radius:50%;flex:none;
+    background:
+      radial-gradient(circle at 32% 28%, #ffffff 0 8%, transparent 9%),
+      radial-gradient(circle at 34% 30%, var(--lime) 0 34%, #b9d92f 62%, #8fae16 100%);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.08);
+  }
+  .nav{display:flex;align-items:center;gap:2px}
+  .nav a{
+    text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;
+    padding:8px 11px;border-radius:999px;transition:color .15s ease, background .15s ease;white-space:nowrap;
+  }
+  .nav a:hover{color:var(--ink);background:rgba(0,0,0,.045)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:72px 0 40px}
+  .hero::before{
+    content:"";position:absolute;inset:-180px -12% auto -12%;height:560px;z-index:0;
+    background:
+      radial-gradient(38% 55% at 16% 32%, rgba(217,242,79,.30) 0%, rgba(217,242,79,0) 72%),
+      radial-gradient(42% 60% at 86% 14%, rgba(27,107,71,.15) 0%, rgba(27,107,71,0) 70%),
+      radial-gradient(50% 50% at 62% 92%, rgba(90,150,220,.10) 0%, rgba(90,150,220,0) 72%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    margin:0 0 18px;padding:6px 12px 6px 10px;border-radius:999px;
+    background:var(--green-soft);color:var(--green-deep);
+    font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex:none}
+  h1{margin:0 0 14px;font-size:clamp(30px,4.4vw,48px);line-height:1.14;letter-spacing:-.02em;font-weight:750}
+  h1 .accent{color:var(--green)}
+  .lead{margin:0 0 10px;font-size:clamp(15px,1.5vw,17.5px);color:#3d4a50;font-weight:500}
+  .desc{margin:0;max-width:48ch;color:var(--muted);font-size:15.5px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;justify-content:center;
+    padding:12px 20px;border-radius:12px;text-decoration:none;
+    font-size:15px;font-weight:600;border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 6px 16px rgba(27,107,71,.22)}
+  .btn-primary:hover{background:var(--green-deep);box-shadow:0 10px 22px rgba(27,107,71,.26)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line-strong);box-shadow:var(--shadow-sm)}
+  .btn-ghost:hover{border-color:#b9beb4;box-shadow:0 8px 20px rgba(16,24,20,.08)}
+
+  .hero-visual{position:relative;display:none;min-height:330px}
+  .shot{position:absolute;margin:0;border-radius:16px;overflow:hidden;border:6px solid #fff;background:#0f3322;box-shadow:0 20px 48px rgba(16,24,20,.18)}
+  .shot img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .shot-a{top:0;left:0;width:88%;transform:rotate(-2.2deg)}
+  .shot-b{right:0;bottom:0;width:66%;transform:rotate(2.6deg);box-shadow:0 26px 60px rgba(16,24,20,.24)}
+  .hero-visual::after{
+    content:"";position:absolute;inset:auto -8% -26px 12%;height:120px;z-index:-1;
+    background:radial-gradient(closest-side, rgba(27,107,71,.18), transparent 78%);filter:blur(6px);
+  }
+
+  .stats{
+    list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;
+    margin:40px 0 0;padding:0;
+  }
+  .stats li{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .stats .num{display:block;font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+  .stats .lab{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* ---------- sections ---------- */
+  .section{padding:56px 0}
+  .section-alt{background:linear-gradient(180deg,#ffffff 0%,#fdfdfb 100%);border-block:1px solid var(--line)}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:26px;flex-wrap:wrap}
+  .section-head h2{margin:0;font-size:clamp(22px,2.6vw,28px);letter-spacing:-.015em;font-weight:720}
+  .section-head p{margin:6px 0 0;color:var(--muted);font-size:14.5px;max-width:56ch}
+
+  /* ---------- video cards ---------- */
+  .grid{display:grid;gap:20px}
+  .grid.videos{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow-sm);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(16,24,20,.10);border-color:var(--line-strong)}
+  .thumb{
+    position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;cursor:pointer;
+    background:radial-gradient(120% 90% at 20% 15%, #2c7a55 0%, #17492f 55%, #0f3322 100%);
+    overflow:hidden;
+  }
+  .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+  .thumb:hover img{transform:scale(1.035)}
+  .thumb.no-thumb img{display:none}
+  .thumb.no-thumb::after{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 24% 30%, rgba(217,242,79,.35), transparent 55%),
+      radial-gradient(circle at 78% 74%, rgba(255,255,255,.16), transparent 55%);
+  }
+  .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+  .play span{
+    width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(255,255,255,.92);box-shadow:0 8px 24px rgba(0,0,0,.28);
+    transition:transform .18s ease;
+  }
+  .thumb:hover .play span{transform:scale(1.08)}
+  .play svg{width:20px;height:20px;margin-left:2px;fill:var(--green-deep)}
+  .badge{
+    position:absolute;top:12px;left:12px;z-index:2;
+    padding:4px 10px;border-radius:999px;font-size:12px;font-weight:650;letter-spacing:.02em;
+    background:rgba(255,255,255,.94);color:var(--green-deep);
+    box-shadow:0 1px 4px rgba(0,0,0,.12);
+  }
+  .card-body{padding:16px 18px 18px}
+  .card-body h3{margin:0 0 4px;font-size:16.5px;line-height:1.45;font-weight:650;letter-spacing:-.005em}
+  .card-body .meta{margin:0;color:var(--muted);font-size:13.5px}
+  .mini-link{
+    display:inline-block;margin-top:10px;font-size:13.5px;font-weight:600;color:var(--green);
+    text-decoration:none;border-bottom:1px solid rgba(27,107,71,.25);
+  }
+  .mini-link:hover{border-bottom-color:var(--green)}
+
+  /* ---------- album cards ---------- */
+  .grid.albums{grid-template-columns:repeat(auto-fill,minmax(285px,1fr))}
+  .album{
+    display:flex;flex-direction:column;text-decoration:none;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow-sm);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .album:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(16,24,20,.10);border-color:var(--line-strong)}
+  .album-cover{
+    position:relative;aspect-ratio:16/10;overflow:hidden;color:#fff;
+    display:flex;flex-direction:column;justify-content:center;gap:2px;
+    padding:22px 24px;
+    background:linear-gradient(135deg,#2f7f5b 0%,#17492f 100%);
+  }
+  .album-cover.tone-b{background:linear-gradient(135deg,#2b7a72 0%,#134a45 100%)}
+  .album-cover.tone-c{background:linear-gradient(135deg,#6f7f2a 0%,#3c4a12 100%)}
+  .album-cover .court{position:absolute;inset:0;width:100%;height:100%;opacity:.16}
+  .album-cover .court path,.album-cover .court rect,.album-cover .court line{
+    stroke:#fff;fill:none;stroke-width:2;vector-effect:non-scaling-stroke;
+  }
+  .album-cover .cover-day{position:relative;font-size:34px;font-weight:750;letter-spacing:-.02em;line-height:1.1}
+  .album-cover .cover-sub{position:relative;font-size:13px;opacity:.85;letter-spacing:.01em}
+  .album-cover .count{
+    position:absolute;bottom:12px;right:12px;z-index:2;
+    font-size:12px;font-weight:650;padding:4px 10px;border-radius:999px;
+    background:rgba(255,255,255,.92);color:var(--green-deep);
+  }
+  .album-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+  .album-body h3{margin:0;font-size:16.5px;font-weight:650;line-height:1.45}
+  .album-body p{margin:0;color:var(--muted);font-size:13.5px}
+  .album-body .go{
+    margin-top:auto;padding-top:12px;font-size:13.5px;font-weight:600;color:var(--green);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+
+  /* ---------- info ---------- */
+  .info-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+  .info-grid.solo{grid-template-columns:minmax(0,680px)}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm)}
+  .panel h2{margin:0 0 16px;font-size:20px;letter-spacing:-.01em}
+  dl.facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 18px;font-size:14.8px}
+  dl.facts dt{color:var(--muted);white-space:nowrap}
+  dl.facts dd{margin:0;font-weight:550}
+  .panel .btn{margin-top:20px;width:100%}
+  .note{margin:14px 0 0;font-size:13px;color:var(--muted)}
+  .results-table{width:100%;border-collapse:collapse;font-size:14.5px}
+  .results-table th,.results-table td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+  .results-table th{color:var(--muted);font-weight:600;font-size:13px}
+  .results-table tr:last-child td{border-bottom:0}
+  .tbd{color:#9aa4a8}
+
+  /* ---------- footer ---------- */
+  .site-footer{border-top:1px solid var(--line);padding:34px 0 46px;color:var(--muted);font-size:13.5px}
+  .footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+  .footer-inner a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+  .footer-inner a:hover{color:var(--ink)}
+
+  /* ---------- lightbox ---------- */
+  .lightbox[hidden]{display:none}
+  .lightbox{
+    position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;
+    background:rgba(12,18,15,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+  .lightbox-inner{width:min(1000px,100%);position:relative}
+  .lightbox .frame{aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .lightbox iframe{width:100%;height:100%;border:0;display:block}
+  .lightbox-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:14px;color:#e7ece9;font-size:14px}
+  .lightbox-bar a{color:#d9f24f;text-decoration:none;font-weight:600;white-space:nowrap}
+  .close{
+    position:absolute;top:-48px;right:0;width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:#fff;
+    font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;
+  }
+  .close:hover{background:rgba(255,255,255,.24)}
+  body.is-locked{overflow:hidden}
+
+  /* ---------- reveal ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease, transform .55s ease}
+    .js .reveal.in{opacity:1;transform:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (min-width:960px){
+    .hero-inner{grid-template-columns:1.08fr .92fr;gap:56px}
+    .hero-visual{display:block}
+  }
+  @media (max-width:820px){
+    .info-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .hero{padding-top:52px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 18px}
+    .brand{font-size:14px;gap:8px}
+    .brand-mark{width:22px;height:22px}
+    .nav a{padding:8px 8px;font-size:13.5px}
+    .section{padding:44px 0}
+    .panel{padding:20px}
+    .lightbox{padding:14px}
+    .close{top:-44px}
+    dl.facts{grid-template-columns:1fr;gap:2px 0}
+    dl.facts dt{font-size:12.5px;margin-top:8px}
+  }
+</style>
 </head>
-
 <body>
-<div class="container">
-<div class="row">
-<h6> 学习网页编辑中，仅供练习目的 </h6>
-</div>
-<br>
+<a class="sr-only" href="#main">跳到主要内容</a>
 
-<!--
-<div class="row">
-  <h1>凯特学校照片（点击照片可放大）: 2019-2020第一学期</h1>
-</div>
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>金虎杯 · 2026</a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#videos">视频回放</a>
+      <a href="#photos">照片集</a>
+      <a href="#info">赛事信息</a>
+    </nav>
+  </div>
+</header>
 
-<div class="row">
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0576.JPG">
-      <img src="picture/Ogden/IMG_0576.JPG" alt="starcraft1" style="width:100%">
-    </a>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>2026 ICCCI Cup</p>
+        <h1>印州华人<span class="accent">金虎杯</span><br>匹克球公开赛</h1>
+        <p class="lead">2026 年 11 月 14–15 日 · Carmel, IN · The Dink House</p>
+        <p class="desc">两天比赛的直播回放、决赛集锦和照片集，都集中在这一页。点开就能看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#videos">看视频回放</a>
+          <a class="btn btn-ghost" href="#photos">看照片集</a>
+        </div>
+        <ul class="stats" id="stats" aria-label="比赛数据概览"></ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <figure class="shot shot-a"><img src="https://i.ytimg.com/vi/19vC3scbmbw/maxresdefault.jpg" alt="" loading="eager"></figure>
+        <figure class="shot shot-b"><img src="https://i.ytimg.com/vi/4MoYgSyUQUE/maxresdefault.jpg" alt="" loading="eager"></figure>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0591.JPG">
-      <img src="picture/Ogden/IMG_0591.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0603.JPG">
-      <img src="picture/Ogden/IMG_0603.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0632.JPG">
-      <img src="picture/Ogden/IMG_0632.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0636.JPG">
-      <img src="picture/Ogden/IMG_0636.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0641.JPG">
-      <img src="picture/Ogden/IMG_0641.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-</div>
-
-<br>
-
-<div class="row">
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0658.JPG">
-      <img src="picture/Ogden/IMG_0658.JPG" alt="starcraft1" style="width:100%">
-    </a>
+  <section class="section" id="videos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>视频回放</h2>
+          <p>点击卡片直接在本页播放；需要原链接时可以点开 YouTube。</p>
+        </div>
+      </div>
+      <div class="grid videos" id="videoGrid"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0667.JPG">
-      <img src="picture/Ogden/IMG_0667.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0698.JPG">
-      <img src="picture/Ogden/IMG_0698.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0710.JPG">
-      <img src="picture/Ogden/IMG_0710.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0726.JPG">
-      <img src="picture/Ogden/IMG_0726.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/Ogden/IMG_0748.JPG">
-      <img src="picture/Ogden/IMG_0748.JPG" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-</div>
-
-<br>
-
-<br>
-
-<div class="row">
-  <p>过去几个月（12/2018 - 8/2019）体重记录   （<a href="weightrecord.html">体重记录</a>）</p>
-</div>
--->
-<br>
-<div class="row">
-  <p>孩子们的身体指标记录   （<a href="K2fullrecord.html">包含头围的完整记录点这里</a>）</p>
-</div>
-<div class="row">
-  <table class="table table-bordered table-striped table-sm">
-<thead><tr><th title="Field #1"></th>
-<th colspan="4" style='text-align: center'>凯特</th>
-<th colspan="4" style='text-align: center'>凯文</th>
-</tr></thead>
-<tbody style='text-align: center'><tr>
-<td>年龄</td>
-<td>身高（厘米）</td>
-<td>百分比</td>
-<td>体重（公斤）</td>
-<td>百分比</td>
-<!-- <td>头围（厘米）</td>
-<td>百分比</td> -->
-<td>身高（厘米）</td>
-<td>百分比</td>
-<td>体重（公斤）</td>
-<td>百分比</td>
-<!-- <td>头围（厘米）</td>
-<td>百分比</td> -->
-</tr>
-<tr>
-<td>2个月</td>
-<td>56.5</td>
-<td>34%</td>
-<td>5.4</td>
-<td>61%</td>
-<!-- <td>38.8</td>
-<td>64%</td> -->
-<td>61.0</td>
-<td>78%</td>
-<td>6.2</td>
-<td>71%</td>
-<!-- <td>41.4</td>
-<td>94%</td> -->
-</tr>
-<tr>
-<td>4个月</td>
-<td>62.2</td>
-<td>52%</td>
-<td>6.9</td>
-<td>72%</td>
-<!-- <td>40.8</td>
-<td>57%</td> -->
-<td>66.0</td>
-<td>82%</td>
-<td>7.6</td>
-<td>74%</td>
-<!-- <td>43.4</td>
-<td>92%</td> -->
-</tr>
-<tr>
-<td>6个月</td>
-<td>67.3</td>
-<td>76%</td>
-<td>8.1</td>
-<td>81%</td>
-<!-- <td>42.6</td>
-<td>62%</td> -->
-<td>69.9</td>
-<td>85%</td>
-<td>8.3</td>
-<td>66%</td>
-<!-- <td>44.6</td>
-<td>85%</td> -->
-</tr>
-<tr>
-<td>9个月</td>
-<td>70.5</td>
-<td>56%</td>
-<td>9.4</td>
-<td>86%</td>
-<!-- <td>45.1</td>
-<td>83%</td> -->
-<td>74.9</td>
-<td>90%</td>
-<td>9.4</td>
-<td>70%</td>
-<!-- <td>47.3</td>
-<td>97%</td> -->
-</tr>
-<tr>
-<td>1岁</td>
-<td>73.7</td>
-<td>45%</td>
-<td>9.9</td>
-<td>79%</td>
-<!-- <td>46.8</td>
-<td>92%</td> -->
-<td>77.5</td>
-<td>77%</td>
-<td>9.9</td>
-<td>60%</td>
-<!-- <td>48.3</td>
-<td>96%</td> -->
-</tr>
-<tr>
-<td>1岁3个月</td>
-<td>76.2</td>
-<td>31%</td>
-<td>10.1</td>
-<td>67%</td>
-<!-- <td>47.3</td>
-<td>88%</td> -->
-<td>81.3</td>
-<td>77%</td>
-<td>10.3</td>
-<td>49%</td>
-<!-- <td>49.3</td>
-<td>97%</td> -->
-</tr>
-<tr>
-<td>1岁半</td>
-<td>80.6</td>
-<td>44%</td>
-<td>10.7</td>
-<td>63%</td>
-<!-- <td>48.0</td>
-<td>89%</td> -->
-<td>85.1</td>
-<td>83%</td>
-<td>11.5</td>
-<td>65%</td>
-<!-- <td>49.3</td>
-<td>92%</td> -->
-</tr>
-<tr>
-<td>2岁</td>
-<td>83.8</td>
-<td>37%</td>
-<td>11.0</td>
-<td>18%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td>90.8</td>
-<td>89%</td>
-<td>12.6</td>
-<td>49%</td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-<tr>
-<td>3岁</td>
-<td>92.1</td>
-<td>32%</td>
-<td>13.9</td>
-<td>50%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td>97.2</td>
-<td>71%</td>
-<td>15.8</td>
-<td>80%</td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-<tr>
-<td>4岁</td>
-<td>99.4</td>
-<td>37%</td>
-<td>15.0</td>
-<td>33%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td>105.4</td>
-<td>77%</td>
-<td>18.1</td>
-<td>80%</td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-<tr>
-<td>5岁</td>
-<td>107.3</td>
-<td>47%</td>
-<td>16.8</td>
-<td>31%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td>111.8</td>
-<td>73%</td>
-<td>20.4</td>
-<td>77%</td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-<tr>
-<td>6岁</td>
-<td>111.8</td>
-<td>26%</td>
-<td>19.2</td>
-<td>35%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-<tr>
-<td>7岁</td>
-<td>119.1</td>
-<td>31%</td>
-<td>21.7</td>
-<td>37%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-<tr>
-<td>8岁</td>
-<td>123.2</td>
-<td>21%</td>
-<td>23.4</td>
-<td>28%</td>
-<!-- <td> </td>
-<td> </td> -->
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<!-- <td> </td>
-<td> </td> -->
-</tr>
-</tbody></table>
-
-</div>
-<br>
-
-<div class="row">
-  <p>孩子们最新照片（点击照片可放大）: 2018年4月17日</p>
-</div>
-
-<div class="row">
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/1270418363.jpg">
-      <img src="picture/1270418363.jpg" alt="starcraft1" style="width:100%">
-    </a>
+  <section class="section section-alt" id="photos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>照片集</h2>
+          <p>摄影师分享的相册，点击即可打开原相册（Google Photos / Google Drive）。</p>
+        </div>
+      </div>
+      <div class="grid albums" id="albumGrid"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/1848323070.jpg">
-      <img src="picture/1848323070.jpg" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
+  <section class="section" id="info">
+    <div class="wrap">
+      <div class="info-grid solo" id="infoGrid">
+        <div class="panel reveal">
+          <h2>赛事信息</h2>
+          <dl class="facts" id="facts"></dl>
+          <a class="btn btn-primary" id="eventLink" href="#" target="_blank" rel="noopener">查看报名与赛程页</a>
+          <p class="note">页面内容由参赛球友整理，视频与照片版权归原作者所有。</p>
+        </div>
+        <div class="panel reveal" id="resultsPanel" hidden>
+          <h2>冠亚军</h2>
+          <table class="results-table">
+            <thead><tr><th>项目</th><th>冠军</th><th>亚军</th></tr></thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/1870595086.jpg">
-      <img src="picture/1870595086.jpg" alt="starcraft1" style="width:100%">
-    </a>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>2026 ICCCI 杯印州华人金虎匹克球公开赛 · 比赛资料汇总</span>
+    <span><a href="#top">回到顶部 ↑</a></span>
   </div>
-  </div>
+</footer>
 
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/12122795.jpg">
-      <img src="picture/12122795.jpg" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/107188208.jpg">
-      <img src="picture/107188208.jpg" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
-  </div>
-
-  <div class="col-sm-2 col-md-2">
-    <div class="thumbnail">
-    <a href="picture/117585785.jpg">
-      <img src="picture/117585785.jpg" alt="starcraft1" style="width:100%">
-    </a>
-  </div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="视频播放">
+  <div class="lightbox-inner">
+    <button class="close" id="lightboxClose" aria-label="关闭">×</button>
+    <div class="frame"><iframe id="player" title="视频播放器" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="lightbox-bar"><span id="playerTitle"></span><a id="playerLink" href="#" target="_blank" rel="noopener">在 YouTube 打开 ↗</a></div>
   </div>
 </div>
 
+<script>
+/* =========================================================================
+   维护说明：只需要改下面这一段。
+   - 加视频：在 videos 里加一项，youtubeId 就是 youtu.be/ 后面那 11 位字符。
+   - 加相册：在 albums 里加一项，link 填分享链接，day 写 Day 1 / Day 2 / 全部。
+   - 冠亚军：results 留空 [] 就不显示该区块；有名单时按格式填即可。
+   ========================================================================= */
+const CONFIG = {
+  event: {
+    name: "2026 ICCCI 杯印州华人金虎匹克球公开赛",
+    dates: "2026 年 11 月 14–15 日",
+    venue: "The Dink House · Carmel, IN",
+    eventPage: "https://pickleball.community/event/97",
+    organiser: "ICCCI（印州华人社区）"
+  },
+  videos: [
+    { youtubeId: "19vC3scbmbw", title: "Day 1 决赛直播回放",      day: "Day 1", meta: "完整直播 · 决赛日" },
+    { youtubeId: "NSyC53KstVM", title: "Day 2 直播回放（16 强起）", day: "Day 2", meta: "完整直播 · 淘汰赛阶段" },
+    { youtubeId: "4MoYgSyUQUE", title: "Day 1 男双决赛集锦",      day: "Day 1", meta: "精彩集锦 · 男双决赛" }
+  ],
+  albums: [
+    { title: "Day 1 照片集",  day: "Day 1", by: "Charles Lin", link: "https://photos.app.goo.gl/eV2nLNymzutxLqDV9", source: "Google Photos", tone: "a" },
+    { title: "Day 2 照片集",  day: "Day 2", by: "Charles Lin", link: "https://photos.app.goo.gl/rMkAff9wVkxqSeZdA", source: "Google Photos", tone: "b" },
+    { title: "比赛照片集",    day: "全部",  by: "解丽",         link: "https://drive.google.com/drive/folders/1k2UyWPXrCDwje2stF1keQK7LBxSaD0Id?usp=sharing", source: "Drive 文件夹", tone: "c" }
+  ],
+  results: []
+};
 
+document.documentElement.classList.add('js');
+const $ = (s, r = document) => r.querySelector(s);
 
-</div>
+/* ---------------- 统计条 ---------------- */
+(function renderStats() {
+  const shooters = new Set(CONFIG.albums.map(a => a.by)).size;
+  const items = [
+    { num: "2", lab: "比赛日" },
+    { num: CONFIG.videos.length, lab: "视频回放" },
+    { num: CONFIG.albums.length, lab: "照片集" },
+    { num: shooters, lab: "摄影师" }
+  ];
+  $('#stats').innerHTML = items.map(i =>
+    `<li><span class="num">${i.num}</span><span class="lab">${i.lab}</span></li>`
+  ).join('');
+})();
 
+/* ---------------- 视频卡片 ---------------- */
+(function renderVideos() {
+  $('#videoGrid').innerHTML = CONFIG.videos.map((v, i) => `
+    <article class="card reveal" style="transition-delay:${i * 60}ms">
+      <button class="thumb" data-id="${v.youtubeId}" data-title="${v.title}" aria-label="播放视频：${v.title}">
+        <span class="badge">${v.day}</span>
+        <img src="https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg" alt="" loading="lazy"
+             onerror="this.closest('.thumb').classList.add('no-thumb')">
+        <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </button>
+      <div class="card-body">
+        <h3>${v.title}</h3>
+        <p class="meta">${v.meta}</p>
+        <a class="mini-link" href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" rel="noopener">在 YouTube 打开 ↗</a>
+      </div>
+    </article>
+  `).join('');
+})();
 
-<!-- <img src="https://cdn.arstechnica.net/wp-content/uploads/2017/03/Screenshot-102-800x300.png" alt="starcraft forever" /> -->
+/* ---------------- 相册卡片 ---------------- */
+const court = `<svg class="court" viewBox="0 0 160 100" preserveAspectRatio="none" aria-hidden="true">
+  <rect x="6" y="8" width="148" height="84" rx="2"/>
+  <line x1="6" y1="50" x2="154" y2="50"/>
+  <line x1="52" y1="8" x2="52" y2="92"/><line x1="108" y1="8" x2="108" y2="92"/>
+  <line x1="6" y1="22" x2="154" y2="22"/><line x1="6" y1="78" x2="154" y2="78"/>
+</svg>`;
 
+(function renderAlbums() {
+  $('#albumGrid').innerHTML = CONFIG.albums.map((a, i) => `
+    <a class="album reveal" href="${a.link}" target="_blank" rel="noopener" style="transition-delay:${i * 60}ms">
+      <div class="album-cover tone-${a.tone}">
+        ${court}
+        <span class="cover-day">${a.day}</span>
+        <span class="cover-sub">摄影 · ${a.by}</span>
+        <span class="count">${a.source}</span>
+      </div>
+      <div class="album-body">
+        <h3>${a.title}</h3>
+        <p>${a.by} 拍摄 · ${a.source}</p>
+        <span class="go">打开相册 ↗</span>
+      </div>
+    </a>
+  `).join('');
+})();
 
+/* ---------------- 赛事信息 ---------------- */
+(function renderFacts() {
+  const e = CONFIG.event;
+  const rows = [["赛事", e.name], ["时间", e.dates], ["地点", e.venue], ["主办", e.organiser]];
+  $('#facts').innerHTML = rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+  $('#eventLink').href = e.eventPage;
+})();
 
+/* ---------------- 冠亚军（可选） ---------------- */
+(function renderResults() {
+  if (!CONFIG.results.length) return;
+  $('#resultsPanel').hidden = false;
+  $('#infoGrid').classList.remove('solo');
+  $('#resultsBody').innerHTML = CONFIG.results.map(r => `
+    <tr><td>${r.event}</td>
+        <td>${r.champion || '<span class="tbd">待补充</span>'}</td>
+        <td>${r.runnerUp || '<span class="tbd">待补充</span>'}</td></tr>
+  `).join('');
+})();
 
-<hr>
+/* ---------------- 播放器 ---------------- */
+(function lightbox() {
+  const box = $('#lightbox'), player = $('#player'), title = $('#playerTitle'), link = $('#playerLink');
 
-<ul>
-  	<li>
-  		<a href="https://starcraft.com/en-us/" target="_blank">Stacraft.com</a>
-  	</li>
-  	<li>
-  		<a href="https://www.google.com">Google.com here</a>
-  	</li>
-</ul>
-<hr>
+  function open(id, name) {
+    player.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    title.textContent = name;
+    link.href = `https://www.youtube.com/watch?v=${id}`;
+    box.hidden = false;
+    document.body.classList.add('is-locked');
+    $('#lightboxClose').focus();
+  }
+  function close() {
+    player.src = '';
+    box.hidden = true;
+    document.body.classList.remove('is-locked');
+  }
 
-<table border="1">
-  	<thead>
-  	<tr>
-  		<th colspan="3"> Some information</th>
-    <tr>
-      <th>Book</th>
-      <th>Movie</th>
-      <th>Song</th>
-    </tr>
-  	</thead>
-  	<tbody>
-    <tr>
-      <td>Gone with the wind</td>
-      <td>Coco</td>
-      <td>Something just like this</td>
-    </tr>
-    <tr>
-      <td>Harry Potter</td>
-      <td>StarWars: New Hope</td>
-      <td>Time machine</td>
-    </tr>
-    </tbody>
-  
-</table>
+  document.addEventListener('click', ev => {
+    const btn = ev.target.closest('.thumb');
+    if (btn) open(btn.dataset.id, btn.dataset.title);
+  });
+  $('#lightboxClose').addEventListener('click', close);
+  box.addEventListener('click', ev => { if (ev.target === box) close(); });
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !box.hidden) close(); });
+})();
 
-<hr>
+/* ---------------- 页头阴影 + 滚动显现 ---------------- */
+(function chrome() {
+  const header = $('#siteHeader');
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-<a href="https://congchen2017.github.io/Bitcoin_Twitter_Sentiment_Analysis/">Webpage of my last group project</a>
-
-
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  items.forEach(el => io.observe(el));
+})();
+</script>
 </body>
 </html>
