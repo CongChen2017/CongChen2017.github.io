@@ -302,7 +302,7 @@
   <div class="wrap header-inner">
     <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>金虎杯 · 2026</a>
     <nav class="nav" aria-label="页面导航">
-      <a href="#videos">视频回放</a>
+      <a href="#videos">直播回放</a>
       <a href="#photos">照片集</a>
       <a href="#info">赛事信息</a>
     </nav>
@@ -318,7 +318,7 @@
         <p class="lead">2026 年 11 月 14–15 日 · Carmel, IN · The Dink House</p>
         <p class="desc">两天比赛的直播回放、单场淘汰赛录像和照片集，都集中在这一页。点开就能看。</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#videos">看视频回放</a>
+          <a class="btn btn-primary" href="#videos">看直播回放</a>
           <a class="btn btn-ghost" href="#photos">看照片集</a>
         </div>
         <ul class="stats" id="stats" aria-label="比赛数据概览"></ul>
@@ -334,15 +334,15 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <h2>视频回放</h2>
-          <p>点击卡片直接在本页播放；需要原链接时可以点开 YouTube。</p>
+          <h2>直播回放</h2>
+          <p>两天比赛的完整直播，点开就在本页播放；需要原链接时可以点开 YouTube。</p>
         </div>
       </div>
       <div class="grid videos" id="videoGrid"></div>
 
       <div class="subhead reveal" id="matchHead">
-        <h3>单场比赛录像 <span class="pill">Day 2 淘汰赛</span></h3>
-        <p>按轮次从决赛开始排列，每段就是一场完整比赛。</p>
+        <h3>单场比赛录像及集锦 <span class="pill">Day 2 淘汰赛 · Day 1 集锦</span></h3>
+        <p>按轮次从决赛开始排列，每段就是一场完整比赛；最后一段是 Day 1 男双决赛集锦。</p>
       </div>
       <div class="grid videos" id="matchGrid"></div>
     </div>
@@ -414,13 +414,13 @@ const CONFIG = {
   videos: [
     { group: "live",  youtubeId: "19vC3scbmbw", title: "Day 1 决赛直播回放",       day: "Day 1", meta: "完整直播 · 决赛日" },
     { group: "live",  youtubeId: "NSyC53KstVM", title: "Day 2 直播回放（16 强起）", day: "Day 2", meta: "完整直播 · 淘汰赛阶段" },
-    { group: "live",  youtubeId: "4MoYgSyUQUE", title: "Day 1 男双决赛集锦",       day: "Day 1", meta: "精彩集锦 · 男双决赛" },
 
     { group: "match", youtubeId: "MRs7JMrv0Zc", title: "决赛 · Kevin / Becca vs 志伟 / Tammie",          day: "Day 2", meta: "Day 2 决赛 · 17:44" },
     { group: "match", youtubeId: "4HSFNlyyQeU", title: "半决赛 · Kevin / Becca vs Tingjun / Joshua",     day: "Day 2", meta: "Day 2 半决赛 · 11:56" },
     { group: "match", youtubeId: "EY3O-n6Rixk", title: "铜牌赛 · Tingjun / Joshua vs Jeff / Jordyn",     day: "Day 2", meta: "Day 2 铜牌赛 · 19:39" },
     { group: "match", youtubeId: "_8IfgNKXkLU", title: "八强 · Kevin / Becca vs 骆华 / Anne",            day: "Day 2", meta: "Day 2 1/4 决赛 · 7:39" },
-    { group: "match", youtubeId: "QM6m-JaJ1S4", title: "十六强 · 大姚 / 玉萍 vs Andy / Nancy",           day: "Day 2", meta: "Day 2 1/16 决赛 · 18:47" }
+    { group: "match", youtubeId: "QM6m-JaJ1S4", title: "十六强 · 大姚 / 玉萍 vs Andy / Nancy",           day: "Day 2", meta: "Day 2 1/16 决赛 · 18:47" },
+    { group: "match", youtubeId: "4MoYgSyUQUE", title: "男双决赛集锦",                                    day: "Day 1", meta: "Day 1 精彩集锦 · 男双决赛" }
   ],
   albums: [
     { title: "Day 1 照片集",  day: "Day 1", by: "Charles Lin", link: "https://photos.app.goo.gl/eV2nLNymzutxLqDV9", source: "Google Photos", tone: "a" },
