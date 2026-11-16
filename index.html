@@ -177,7 +177,7 @@
   .mini-link:hover{border-bottom-color:var(--green)}
 
   /* ---------- album cards ---------- */
-  .grid.albums{grid-template-columns:repeat(auto-fill,minmax(285px,1fr))}
+  .grid.albums{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
   .album{
     display:flex;flex-direction:column;text-decoration:none;
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
@@ -193,6 +193,7 @@
   }
   .album-cover.tone-b{background:linear-gradient(135deg,#2b7a72 0%,#134a45 100%)}
   .album-cover.tone-c{background:linear-gradient(135deg,#6f7f2a 0%,#3c4a12 100%)}
+  .album-cover.tone-d{background:linear-gradient(135deg,#3a6d8c 0%,#1b3b4f 100%)}
   .album-cover .court{position:absolute;inset:0;width:100%;height:100%;opacity:.16}
   .album-cover .court path,.album-cover .court rect,.album-cover .court line{
     stroke:#fff;fill:none;stroke-width:2;vector-effect:non-scaling-stroke;
@@ -401,7 +402,8 @@ const CONFIG = {
   albums: [
     { title: "Day 1 照片集",  day: "Day 1", by: "Charles Lin", link: "https://photos.app.goo.gl/eV2nLNymzutxLqDV9", source: "Google Photos", tone: "a" },
     { title: "Day 2 照片集",  day: "Day 2", by: "Charles Lin", link: "https://photos.app.goo.gl/rMkAff9wVkxqSeZdA", source: "Google Photos", tone: "b" },
-    { title: "比赛照片集",    day: "全部",  by: "解丽",         link: "https://drive.google.com/drive/folders/1k2UyWPXrCDwje2stF1keQK7LBxSaD0Id?usp=sharing", source: "Drive 文件夹", tone: "c" }
+    { title: "比赛照片集",    day: "全部",  by: "解丽",         link: "https://drive.google.com/drive/folders/1k2UyWPXrCDwje2stF1keQK7LBxSaD0Id?usp=sharing", source: "Drive 文件夹", tone: "c" },
+    { title: "比赛照片集",    day: "全部",  by: "Yong, WD",     link: "https://drive.google.com/drive/folders/1pqlvtqfQKY0xaRX4ycE4QuKKsOGMwA6q", source: "Drive 文件夹", tone: "d" }
   ],
   results: []
 };
