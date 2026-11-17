@@ -386,8 +386,8 @@
       <div class="grid videos" id="videoGrid"></div>
 
       <div class="subhead reveal" id="matchHead">
-        <h3><span data-i18n="match.title">单场比赛录像及集锦</span> <span class="pill" data-i18n="match.pill">Day 2 淘汰赛 · Day 1 决赛</span></h3>
-        <p data-i18n="match.desc">Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双、女双决赛，最后一段是男双决赛集锦。</p>
+        <h3><span data-i18n="match.title">单场比赛录像及集锦</span> <span class="pill" data-i18n="match.pill">Day 2 淘汰赛 · Day 1 比赛</span></h3>
+        <p data-i18n="match.desc">Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双决赛、女双比赛和女双决赛，最后一段是男双决赛集锦。</p>
       </div>
       <div class="grid videos" id="matchGrid"></div>
     </div>
@@ -488,6 +488,12 @@ const CONFIG = {
     { group: "match", youtubeId: "1PUA50Qjhgs", day: "Day 1",
       title: "男双决赛 · Kevin / 骆华 vs 志伟 / Tim", titleEn: "Men's doubles final · Kevin / 骆华 vs 志伟 / Tim",
       meta: "Day 1 男双决赛 · 29:19", metaEn: "Day 1 Men's doubles final · 29:19" },
+    { group: "match", youtubeId: "xxsXCUPFWTo", day: "Day 1",
+      title: "女双 · 宇慧 / Jordyn vs Dylan / Kelsey", titleEn: "Women's doubles · 宇慧 / Jordyn vs Dylan / Kelsey",
+      meta: "Day 1 女双 · 10:11", metaEn: "Day 1 Women's doubles · 10:11" },
+    { group: "match", youtubeId: "kpXvZARW8xI", day: "Day 1",
+      title: "女双 · 宇慧 / Jordyn vs Nancy / 潘菲", titleEn: "Women's doubles · 宇慧 / Jordyn vs Nancy / 潘菲",
+      meta: "Day 1 女双 · 6:13", metaEn: "Day 1 Women's doubles · 6:13" },
     { group: "match", youtubeId: "FOHShIx4HJw", day: "Day 1",
       title: "女双决赛 · Tingjun / Elmira vs Nancy / 潘菲", titleEn: "Women's doubles final · Tingjun / Elmira vs Nancy / 潘菲",
       meta: "Day 1 女双决赛 · 15:07", metaEn: "Day 1 Women's doubles final · 15:07" },
@@ -523,8 +529,8 @@ const I18N = {
     'stats.days': '比赛日', 'stats.videos': '视频', 'stats.albums': '照片集', 'stats.shooters': '摄影师',
     'videos.title': '直播回放',
     'videos.desc': '两天比赛的完整直播，点开就在本页播放；需要原链接时可以点开 YouTube。',
-    'match.title': '单场比赛录像及集锦', 'match.pill': 'Day 2 淘汰赛 · Day 1 决赛',
-    'match.desc': 'Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双、女双决赛，最后一段是男双决赛集锦。',
+    'match.title': '单场比赛录像及集锦', 'match.pill': 'Day 2 淘汰赛 · Day 1 比赛',
+    'match.desc': 'Day 2 从决赛到十六强按轮次排列，接着是 Day 1 的男双决赛、女双比赛和女双决赛，最后一段是男双决赛集锦。',
     'photos.title': '照片集',
     'photos.desc': '摄影师分享的相册，点击即可打开原相册（Google Photos / Google Drive）。',
     'album.by': '摄影 ·', 'album.meta': '{by} 拍摄 · {source}', 'album.open': '打开相册 ↗',
@@ -551,8 +557,8 @@ const I18N = {
     'stats.days': 'Days', 'stats.videos': 'Videos', 'stats.albums': 'Albums', 'stats.shooters': 'Photographers',
     'videos.title': 'Live replay',
     'videos.desc': 'Full live streams from both days — play right here, or open them on YouTube.',
-    'match.title': 'Match videos & highlights', 'match.pill': 'Day 2 knockout · Day 1 finals',
-    'match.desc': 'Day 2 runs from the final down to the Round of 16, followed by the Day 1 men’s and women’s doubles finals and the men’s doubles highlights.',
+    'match.title': 'Match videos & highlights', 'match.pill': 'Day 2 knockout · Day 1 matches',
+    'match.desc': 'Day 2 runs from the final down to the Round of 16, followed by the Day 1 men’s doubles final, the women’s doubles matches and final, and the men’s doubles highlights.',
     'photos.title': 'Photos',
     'photos.desc': 'Albums shared by the photographers — click to open the original album (Google Photos / Google Drive).',
     'album.by': 'Photos by', 'album.meta': 'Shot by {by} · {source}', 'album.open': 'Open album ↗',
